@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SampleAppMvc5.Controllers
 {
-    using NotFoundMvc;
+    using HttpErrorMvc;
 
     public class HomeController : Controller
     {
@@ -18,7 +18,7 @@ namespace SampleAppMvc5.Controllers
         public ActionResult Product(int id)
         {
             // NotFoundViewResults inherits from HttpNotFoundResult
-            return new NotFoundViewResult();
+            return new GlobalErrorViewResult(404);
         }
 
         [Route("thisistheroute")]
@@ -32,6 +32,18 @@ namespace SampleAppMvc5.Controllers
             Response.Write("Attempt to write some content."); // Expecting the NotFoundViewResult to clear the response before sending its output.
 
             throw new HttpException(404, "Not found!");
+        }
+        public ActionResult Error()
+        {
+            Response.Write("Attempt to write some content."); // Expecting the NotFoundViewResult to clear the response before sending its output.
+
+            throw new HttpException(500, "custom error!");
+        }
+        public ActionResult PermissionError()
+        {
+            Response.Write("Attempt to write some content."); // Expecting the NotFoundViewResult to clear the response before sending its output.
+
+            throw new HttpException(403, "permission error!");
         }
     }
 }

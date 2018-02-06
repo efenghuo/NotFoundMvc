@@ -1,4 +1,4 @@
-﻿namespace NotFoundMvc
+﻿namespace HttpErrorMvc
 {
     using System;
     using System.Web.Mvc;
@@ -9,7 +9,7 @@
            originalActionInvoker => new ActionInvokerWrapper(originalActionInvoker);
 
         private static readonly Func<IActionInvoker, IActionInvoker> Mvc4Invoker =
-            originalActionInvoker => new NotFoundAsyncControllerActionInvoker();
+            originalActionInvoker => new GlobalErrorAsyncControllerActionInvoker();
 
         public static Func<IActionInvoker, IActionInvoker> Current { get; } = typeof(Controller).Assembly.GetName().Version.Major <= 3 ? Mvc3Invoker : Mvc4Invoker;
     }

@@ -203,9 +203,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NotFoundMvc\NotFoundMvc.csproj">
+    <ProjectReference Include="..\HttpErrorMvc\HttpErrorMvc.csproj">
       <Project>{3d01830a-45e9-471a-b8a4-e15ba1b26e33}</Project>
-      <Name>NotFoundMvc</Name>
+      <Name>HttpErrorMvc</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

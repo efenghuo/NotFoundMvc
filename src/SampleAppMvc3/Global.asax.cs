@@ -4,7 +4,7 @@
     using System.Web.Mvc;
     using System.Web.Routing;
     using NLog;
-    using NotFoundMvc;
+    using HttpErrorMvc;
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode,
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -36,7 +36,7 @@
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            NotFoundConfig.OnNotFound = (req, uri) =>
+            GlobalErrorConfig.OnErrorHandling = (req, uri) =>
             {
                 // The current URI, which can be the same as the original requested URI http://localhost:43825/bin
                 // or something triggered from the IIS via the system.webServer/httpErrors http://localhost:43825/notfound?404;http://localhost:43825/bin

@@ -6,7 +6,7 @@
     using System.Web.Optimization;
     using System.Web.Routing;
     using NLog;
-    using NotFoundMvc;
+    using HttpErrorMvc;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -18,8 +18,10 @@
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            NotFoundConfig.OnNotFound = (req, uri) =>
+            GlobalErrorConfig.CustomData.ErrorViewName = "NotFound";
+            GlobalErrorConfig.CustomData.StatusCodes.Add(403);
+            GlobalErrorConfig.CustomData.StatusCodes.Add(500);
+            GlobalErrorConfig.OnErrorHandling = (req, uri) =>
                 {
                     // The current URI, which can be the same as the original requested URI http://localhost:43825/bin
                     // or something triggered from the IIS via the system.webServer/httpErrors http://localhost:43825/notfound?404;http://localhost:43825/bin

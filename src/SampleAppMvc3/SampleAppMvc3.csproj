@@ -142,15 +142,15 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NotFoundMvc\NotFoundMvc.csproj">
-      <Project>{3d01830a-45e9-471a-b8a4-e15ba1b26e33}</Project>
-      <Name>NotFoundMvc</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HttpErrorMvc\HttpErrorMvc.csproj">
+      <Project>{3d01830a-45e9-471a-b8a4-e15ba1b26e33}</Project>
+      <Name>HttpErrorMvc</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

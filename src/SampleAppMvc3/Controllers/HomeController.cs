@@ -14,7 +14,7 @@ namespace SampleApp.Controllers
         public ActionResult Product(int id)
         {
             // NotFoundViewResults inherits from HttpNotFoundResult
-            return new NotFoundViewResult();
+            return new GlobalErrorViewResult();
         }
 
         public ActionResult Fail()
