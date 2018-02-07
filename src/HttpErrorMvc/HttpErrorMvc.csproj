@@ -9,8 +9,8 @@
     <ProjectGuid>{3D01830A-45E9-471A-B8A4-E15BA1B26E33}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NotFoundMvc</RootNamespace>
-    <AssemblyName>NotFoundMvc</AssemblyName>
+    <RootNamespace>HttpErrorMvc</RootNamespace>
+    <AssemblyName>HttpErrorMvc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
